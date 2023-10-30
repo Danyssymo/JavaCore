@@ -18,4 +18,5 @@ public class Four {
 
         } else {System.out.println("Ваш год не высокосный");}
     }
+
 }
