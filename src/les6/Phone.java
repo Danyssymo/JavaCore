@@ -18,9 +18,7 @@ public class Phone {
   System.out.println(Arrays.toString(number));
  }
  public Phone (int number, String model, int weight) {
-   this(10,"Default");
-   this.number = number;
-   this.model = model;
+   this(number, model);
    this.weight = weight;
  }
  public Phone (int number, String model) {
