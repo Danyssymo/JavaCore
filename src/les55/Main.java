@@ -20,34 +20,10 @@ public class Main {
     }
     public static void getMatrix() {
         System.out.println("Первоначальная матрица: ");
-        String[][] matrix;
-        matrix = new String[10][10];
+        String[][] matrix = new String[10][10];
         String[] right = new String[10];
         String[] left = new String[10];
-        int count = 1;
-        int a = 9;
-        int b = 0;
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                if (count %3 == 0){
-                    matrix[i][j] = getRandomDouble();
-                    System.out.print(" "+ matrix[i][j]+ " ");
-                } else {
-                    matrix[i][j] = getRandomWord();
-                    System.out.print(" " + matrix[i][j] + " ");
-                }
-                count++;
-                if (i==j){
-                    right[j] = matrix[i][j];
-                }
-                if (i == b && j == a){
-                    left[i] = matrix[i][j];
-                    a--;
-                    b++;
-                }
-            }
-            System.out.println();
-        }
+        buildDiag(matrix, right, left);
         System.out.println("Правильная диагональ");
         System.out.println(Arrays.toString(right));
         System.out.println("Обратная диагональ");
@@ -82,4 +58,33 @@ public class Main {
         System.out.println("Элементы String 2-4: ");
         System.out.println(next);
     }
+
+    private static void buildDiag(String[][] matrix, String[] right, String[] left) {
+        int count = 1;
+        int a = 9;
+        int b = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (count %3 == 0){
+                    matrix[i][j] = getRandomDouble();
+                    System.out.print(" "+ matrix[i][j]+ " ");
+                } else {
+                    matrix[i][j] = getRandomWord();
+                    System.out.print(" " + matrix[i][j] + " ");
+                }
+                count++;
+                if (i==j){
+                    right[j] = matrix[i][j];
+                }
+                if (i == b && j == a){
+                    left[i] = matrix[i][j];
+                    a--;
+                    b++;
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
 }
