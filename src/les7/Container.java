@@ -16,6 +16,12 @@ public class Container {
     public int minicilindr = 10;
     public int minikvadrat = 10;
     public int miniconus = 10;
+    public String bigcilindrname = "ЦИЛИНДР";
+    public String bigkvadratname = "КВАДРАТ";
+    public String bigconusname = "КОНУС";
+    public String minicilindrname = "цилиндр";
+    public String minikvadratname = "квадрат";
+    public String miniconusname = "конус";
 
     public final int pl1 = 1000;
     public final int pl2 = 2000;
