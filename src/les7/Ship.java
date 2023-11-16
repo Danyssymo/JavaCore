@@ -39,16 +39,16 @@ public class Ship extends Deck {
         containers = new String[calculatePalubaSize()];
         int q = (int) (Math.random() * 2);
         if (containers.length == MINISIZE) {
-            System.out.print("однопалубный.");
+            System.out.print(MINISPACE);
           System.out.print(" С большими");
         } else if (containers.length == MINISIZE2 && q == 0) {
-            System.out.print("двупалубный.");
+            System.out.print(BIGSPACE);
             System.out.print(" С большими");
         } else if (containers.length == MINISIZE2 && q == 1) {
-            System.out.print("однопалубный.");
+            System.out.print(MINISPACE);
             System.out.print(" С маленькими");
         } else {
-            System.out.print("двупалубный.");
+            System.out.print(BIGSPACE);
             System.out.print(" С маленькими");
         }
         for (int i = 0; i < containers.length; i++) {
