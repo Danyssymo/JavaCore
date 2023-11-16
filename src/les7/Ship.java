@@ -2,34 +2,33 @@ package les7;
 
 public class Ship extends Deck {
     public String ship;
-    public String containertype;
-    public String[] containers;
+    public static String[] containers;
 
     public String getPalubaType() {
         int x = (int) (Math.random() * 2);
         if (x == 0) {
-            ship = MINISPACE;
+            ship = MINI_SPACE;
         } else {
-            ship = BIGSPACE;
+            ship = BIG_SPACE;
         }
         return ship;
     }
 
     public int calculatePalubaSize() {
         int y;
-        if (getPalubaType() == MINISPACE) {
+        if (getPalubaType() == MINI_SPACE) {
             int x = (int) (Math.random() * 2);
             if (x == 1) {
-                y = MINISIZE;
+                y = MINI_SIZE;
             } else {
-                y = MINISIZE2;
+                y = MINI_SIZE2;
             }
         } else {
             int x = (int) (Math.random() * 2);
             if (x == 1) {
-                y = BIGSIZE;
+                y = BIG_SIZE;
             } else {
-                y = BIGSIZE2;
+                y = BIG_SIZE2;
             }
         }
         return y;
@@ -38,50 +37,50 @@ public class Ship extends Deck {
     public String[] addContainerIntoShip() {
         containers = new String[calculatePalubaSize()];
         int q = (int) (Math.random() * 2);
-        if (containers.length == MINISIZE) {
-            System.out.print(MINISPACE);
-          System.out.print(" С большими");
-        } else if (containers.length == MINISIZE2 && q == 0) {
-            System.out.print(BIGSPACE);
-            System.out.print(" С большими");
-        } else if (containers.length == MINISIZE2 && q == 1) {
-            System.out.print(MINISPACE);
-            System.out.print(" С маленькими");
+        if (containers.length == MINI_SIZE) {
+            System.out.print(MINI_SPACE);
+            System.out.print("С большими");
+        } else if (containers.length == MINI_SIZE2 && q == 0) {
+            System.out.print(BIG_SPACE);
+            System.out.print("С большими");
+        } else if (containers.length == MINI_SIZE2 && q == 1) {
+            System.out.print(MINI_SPACE);
+            System.out.print("С маленькими");
         } else {
-            System.out.print(BIGSPACE);
-            System.out.print(" С маленькими");
+            System.out.print(BIG_SPACE);
+            System.out.print("С маленькими");
         }
         for (int i = 0; i < containers.length; i++) {
-            if (containers.length == MINISIZE) {
+            if (containers.length == MINI_SIZE) {
                 int x = (int) (Math.random() * 3);
                 if (x == 0) {
-                    containers[i] = bigcilindrname;
+                    containers[i] = BIG_CILINDR_NAME;
                 } else if (x == 1) {
-                    containers[i] = bigkvadratname;
-                } else containers[i] = bigconusname;
-            } else if (containers.length == MINISIZE2) {
+                    containers[i] = BIG_KVADRAT_NAME;
+                } else containers[i] = BIG_CONUS_NAME;
+            } else if (containers.length == MINI_SIZE2) {
                 if (q == 0) {
                     int x = (int) (Math.random() * 3);
                     if (x == 0) {
-                        containers[i] = bigcilindrname;
+                        containers[i] = BIG_CILINDR_NAME;
                     } else if (x == 1) {
-                        containers[i] = bigkvadratname;
-                    } else containers[i] = bigconusname;
+                        containers[i] = BIG_KVADRAT_NAME;
+                    } else containers[i] = BIG_CONUS_NAME;
                 } else {
                     int x = (int) (Math.random() * 3);
                     if (x == 0) {
-                        containers[i] = minicilindrname;
+                        containers[i] = MINI_CILINDR_NAME;
                     } else if (x == 1) {
-                        containers[i] = minikvadratname;
-                    } else containers[i] = miniconusname;
+                        containers[i] = MINI_KVADRAT_NAME;
+                    } else containers[i] = MINI_CONUS_NAME;
                 }
-            } else if (containers.length == BIGSIZE2) {
+            } else if (containers.length == BIG_SIZE2) {
                 int x = (int) (Math.random() * 3);
                 if (x == 0) {
-                    containers[i] = minicilindrname;
+                    containers[i] = MINI_CILINDR_NAME;
                 } else if (x == 1) {
-                    containers[i] = minikvadratname;
-                } else containers[i] = miniconusname;
+                    containers[i] = MINI_KVADRAT_NAME;
+                } else containers[i] = MINI_CONUS_NAME;
             }
         }
         return containers;
@@ -96,62 +95,4 @@ public class Ship extends Deck {
         }
         return new String(name);
     }
-
-    public String getRandomContainer() {
-        int x = (int) (Math.random() * 3);
-        if (x == 0) {
-            containertype = CILINDR;
-        } else if (x == 1) {
-            containertype = KVADRAT;
-        } else {
-            containertype = CONUS;
-        }
-        return containertype;
-    }
-
-    public int[] checkContainerRange() {
-        int[] containersnum = new int[calculatePalubaSize()];
-        int i = 0;
-        for (String num : addContainerIntoShip()) {
-            if (num == bigcilindrname) {
-                containersnum[i] = bigcilindr;
-            } else if (num == bigkvadratname) {
-                containersnum[i] = bigkvadrat;
-            } else if (num == bigconusname) {
-                containersnum[i] = bigconus;
-            } else if (num == minicilindrname) {
-                containersnum[i] = minicilindr;
-            } else if (num == minikvadratname) {
-                containersnum[i] = minikvadrat;
-            } else {
-                containersnum[i] = miniconus;
-            }
-            System.out.println(containersnum[i]);
-            i++;
-        }
-        return containersnum;
-    }
-
-    public int[] checkContainerRange2() {
-        int hello[] = new int[addContainerIntoShip().length];
-        for (int i = 0; i < addContainerIntoShip().length; i++) {
-            if (addContainerIntoShip()[i] == bigcilindrname) {
-                hello[i] = bigcilindr;
-            } else if (addContainerIntoShip()[i] == bigkvadratname) {
-                hello[i] = bigkvadrat;
-            } else if (addContainerIntoShip()[i] == bigconusname) {
-                hello[i] = bigconus;
-            } else if (addContainerIntoShip()[i] == minicilindrname) {
-                hello[i] = minicilindr;
-            } else if (addContainerIntoShip()[i] == minikvadratname) {
-                hello[i] = minikvadrat;
-            } else {
-                hello[i] = miniconus;
-            }
-            System.out.println(hello[i]);
-        }
-        return hello;
-    }
-
-
 }
