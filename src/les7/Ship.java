@@ -40,13 +40,13 @@ public class Ship extends Deck {
         int q = (int) (Math.random() * 2);
         if (containers.length == MINISIZE) {
             System.out.print("однопалубный.");
-          System.out.print(" С большими:");
+          System.out.print(" С большими");
         } else if (containers.length == MINISIZE2 && q == 0) {
             System.out.print("двупалубный.");
-            System.out.print(" С большими:");
+            System.out.print(" С большими");
         } else if (containers.length == MINISIZE2 && q == 1) {
             System.out.print("однопалубный.");
-            System.out.print(" С маленькими:");
+            System.out.print(" С маленькими");
         } else {
             System.out.print("двупалубный.");
             System.out.print(" С маленькими");
