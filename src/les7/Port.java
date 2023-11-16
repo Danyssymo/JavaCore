@@ -9,7 +9,7 @@ public class Port {
        for (int i = 0; i < 10; i++) {
            Ship ship = new Ship();
            Container container = new Container();
-           System.out.printf("Корабль с именем: " + ship.getRandomName()+" " + ship.getPalubaType());
+           System.out.printf("Корабль с именем: " + ship.getRandomName()+ " ");
            System.out.printf(" контейнерами: " + Arrays.toString(ship.addContainerIntoShip()) + " высотой: "+ container.rnd);
            System.out.println(" и с водой: " + container.getWaterType() + "PL");
        }
