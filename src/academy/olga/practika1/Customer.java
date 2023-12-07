@@ -16,6 +16,8 @@ public class Customer implements Comparable<Customer>{
         this.cardNumber = cardNumber;
         this.bankAccount = bankAccount;
     }
+    public Customer() {
+    }
 
     public int getId() {
         return id;
