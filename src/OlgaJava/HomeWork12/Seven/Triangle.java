@@ -1,56 +1,64 @@
 package OlgaJava.HomeWork12.Seven;
 
 public class Triangle {
-    private static int a = 10;
-    private static int b = 15;
-    private static int c = 20;
-    private static int h = 15;
 
-    public static void main(String[] args) {
-        calculatePl();
-        calculatePer();
+    private Point p1;
+    private Point p2;
+    private Point p3;
+
+    public Triangle(Point p1, Point p2, Point p3) {
+
+        this.p1 = p1;
+        this.p2 = p2;
+        this.p3 = p3;
     }
 
-    private static int calculatePl() {
-        int x = (getA() / 2) * getH();
-        System.out.println("Площадь треугольника: "+x);
-        return x;
-    }
-    private static int calculatePer() {
-        int x = getA()+getB()+getC();
-        System.out.println("Периметр треугольника: "+x);
-        return x;
+    public double getSquare() {
+        double square1 = p1.distance(p2);
+        double square2 = p2.distance(p3);
+        double square3 = p3.distance(p1);
+
+        double per = (square1 + square2 + square3) / 2;
+
+        return Math.sqrt(per * (per - square1) * (per - square2) * (per - square3));
     }
 
-    public static int getA() {
-        return a;
+    public double getPerimeter() {
+        double per1 = p1.distance(p2);
+        double per2 = p2.distance(p3);
+        double per3 = p3.distance(p1);
+
+        return per1 + per2 + per3;
     }
 
-    public static void setA(int a) {
-        Triangle.a = a;
+    public Point getMedian() {
+        double x = (p1.getX() + p2.getX() + p3.getX()) / 3;
+        double y = (p1.getY() + p2.getY() + p3.getY()) / 3;
+
+        return new Point(x, y);
     }
 
-    public static int getB() {
-        return b;
+    public Point getP1() {
+        return p1;
     }
 
-    public static void setB(int b) {
-        Triangle.b = b;
+    public void setP1(Point p1) {
+        this.p1 = p1;
     }
 
-    public static int getC() {
-        return c;
+    public Point getP2() {
+        return p2;
     }
 
-    public static void setC(int c) {
-        Triangle.c = c;
+    public void setP2(Point p2) {
+        this.p2 = p2;
     }
 
-    public static int getH() {
-        return h;
+    public Point getP3() {
+        return p3;
     }
 
-    public static void setH(int h) {
-        Triangle.h = h;
+    public void setP3(Point p3) {
+        this.p3 = p3;
     }
 }

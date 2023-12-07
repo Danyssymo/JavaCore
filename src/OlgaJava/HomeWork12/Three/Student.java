@@ -6,39 +6,27 @@ public class Student {
     private String surName;
     private String initials;
     private int groupNumber;
-    private int[] grade = new int[5];
+    private int[] grade;
+
+    public Student(String surName, String initials, int groupNumber, int[] grade) {
+        this.surName = surName;
+        this.initials = initials;
+        this.groupNumber = groupNumber;
+        this.grade = grade;
+    }
 
     public String getSurName() {
         return surName;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
-    public String getInitials() {
-        return initials;
-    }
-
-    public void setInitials(String initials) {
-        this.initials = initials;
     }
 
     public int getGroupNumber() {
         return groupNumber;
     }
 
-    public void setGroupNumber(int groupNumber) {
-        this.groupNumber = groupNumber;
-    }
-
     public int[] getGrade() {
         return grade;
     }
 
-    public void setGrade(int[] grade) {
-        this.grade = grade;
-    }
 
     @Override
     public String toString() {
