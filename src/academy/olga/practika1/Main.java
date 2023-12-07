@@ -13,6 +13,7 @@ public class Main {
         customers.add(bank.customer2);
         customers.add(bank.customer3);
         customers.add(bank.customer4);
+        sortByName();
         System.out.println(customers);
         checkCardNumber(1000, 2000);
 
